@@ -1,7 +1,7 @@
 # Lab8_Starter
 
 ## Check your understanding q's (FILL OUT)
-1. In your own words: Where would you fit your automated tests in your Bujo project development pipeline? (just write the letter)
+1. In your own words: Where would you fit your automated tests in your Bujo project development pipeline? (just write the letter)</br>
 1.Within a Github action that runs whenever code is pushed. Muanually run the test will lead to a lot of unnecessary work, sometimts we may even forget to test. <br/>
 Run the tests after all development is completed will be too late, we should be testing whenever a unit feature is pushed in order to make sure every unit is working properly.</br>
 In that case, we choose 1.Within a Github action that runs whenever code is pushed.

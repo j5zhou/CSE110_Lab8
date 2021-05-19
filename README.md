@@ -14,4 +14,9 @@ Yes. I would use the unit test to test the "max message length" feature, because
 4. What do you expect to happen if we run our puppeteer tests with the field “headless” set to true?
 
 5. What would your beforeAll callback look like if you wanted to start from the settings page before every test case?
+It should looks like this: because we want to go to the page first and then click on the img that src is ./styles/settings.svg. Then it would manually go to the setting pages.
+` beforeAll(async () => {
+    await page.goto('http://127.0.0.1:5500');
+    await expect(page).toClick('img', { src: './styles/settings.svg' })
+  });`
 

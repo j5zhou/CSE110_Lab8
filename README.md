@@ -29,3 +29,5 @@ It should looks like this: because we want to go to the page first and then clic
     await page.click('img', { src: './styles/settings.svg' })
   });`
 
+ ![sum test and route test](../sumroute.png)
+ ![part2](../part2.png)

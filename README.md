@@ -19,4 +19,9 @@ The tests will be run without using a browser UI.
    
 
 5. What would your beforeAll callback look like if you wanted to start from the settings page before every test case?
+It should looks like this: because we want to go to the page first and then click on the img that src is ./styles/settings.svg. Then it would manually go to the setting pages.
+` beforeAll(async () => {
+    await page.goto('http://127.0.0.1:5500');
+    await expect(page).toClick('img', { src: './styles/settings.svg' })
+  });`
 

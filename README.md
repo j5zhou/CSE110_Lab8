@@ -29,5 +29,5 @@ It should looks like this: because we want to go to the page first and then clic
     await page.click('img', { src: './styles/settings.svg' })
   });`
 
- ![sum test and route test](../sumroute.png)
- ![part2](../part2.png)
+ ![sum test and route test](https://github.com/j5zhou/CSE110_Lab8/blob/starterv2-no-history/sumroute.png?raw=true)
+ ![part2](https://github.com/j5zhou/CSE110_Lab8/blob/starterv2-no-history/part2.png?raw=true)

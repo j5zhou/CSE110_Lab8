@@ -14,7 +14,9 @@ No. I would not use the unit test to test the "message" feature because the "mes
 
 Yes. I would use the unit test to test the "max message length" feature, because it is a small and individual feature. We just need to write a unit test and send a message that contains more than 80 characters to the server and see what the server returns. It is fast and won't affect others unit tests.
 
-4. What do you expect to happen if we run our puppeteer tests with the field “headless” set to true?
+4. What do you expect to happen if we run our puppeteer tests with the field “headless” set to true?</br>
+The tests will be run without using a browser UI.
+   
 
 5. What would your beforeAll callback look like if you wanted to start from the settings page before every test case?
 

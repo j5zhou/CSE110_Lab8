@@ -1,3 +1,4 @@
+
 describe('Basic user flow for SPA ', () => {
   beforeAll(async () => {
     await page.goto('http://127.0.0.1:5500');
@@ -10,7 +11,7 @@ describe('Basic user flow for SPA ', () => {
     });
     expect(numEntries).toBe(10);
   });
-
+  /*
   // test 2 is given
   it('Test2: Make sure <journal-entry> elements are populated', async () => {
     let allArePopulated = true;
@@ -25,7 +26,7 @@ describe('Basic user flow for SPA ', () => {
     }
     expect(allArePopulated).toBe(true);
   }, 30000);
-
+  */
   it('Test3: Clicking first <journal-entry>, new URL should contain /#entry1', async () => {
     // implement test3: Clicking on the first journal entry should update the URL to contain “/#entry1”
 
@@ -59,26 +60,36 @@ describe('Basic user flow for SPA ', () => {
 
   it('Test7: Clicking the settings icon, new URL should contain #settings', async () => {
     // implement test7: Clicking on the settings icon should update the URL to contain “/#settings”
-
+    await page.click('img', { src: './styles/settings.svg' })
+    expect(page.url()).toContain("/#settings");
   });
 
   it('Test8: On Settings page - checking page header title', async () => {
     // implement test8: Clicking on the settings icon should update the header to be “Settings”
-
+    await page.click('img', { src: './styles/settings.svg' })
+    const header = await page.$('h1');
+    expect(await header.evaluate((node) => node.innerText)).toBe('Settings');
   });
 
   it('Test9: On Settings page - checking <body> element classes', async () => {
     // implement test9: Clicking on the settings icon should update the class attribute of <body> to ‘settings’
-
+    await page.click('img', { src: './styles/settings.svg' })
+    const body = await page.$('body');
+    expect(await body.evaluate((node) => node.className)).toEqual('settings');
   });
 
   it('Test10: Clicking the back button, new URL should be /#entry1', async() => {
     // implement test10: Clicking on the back button should update the URL to contain ‘/#entry1’
-
+    await page.goBack(3)
+    expect(page.url()).toContain("/#entry1");
   });
 
   // define and implement test11: Clicking the back button once should bring the user back to the home page
-
+  it('Test11: Clicking the back button once should bring the user back to the home page', async() => {
+    // implement test11: Clicking the back button once should bring the user back to the home page
+    await page.goBack()
+    expect(page.url()).toEqual("http://127.0.0.1:5500/");
+  });
 
   // define and implement test12: When the user if on the homepage, the header title should be “Journal Entries”
 

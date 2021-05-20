@@ -20,6 +20,6 @@ Yes. I would use the unit test to test the "max message length" feature, because
 It should looks like this: because we want to go to the page first and then click on the img that src is ./styles/settings.svg. Then it would manually go to the setting pages.
 ` beforeAll(async () => {
     await page.goto('http://127.0.0.1:5500');
-    await expect(page).toClick('img', { src: './styles/settings.svg' })
+    await page.click('img', { src: './styles/settings.svg' })
   });`
 

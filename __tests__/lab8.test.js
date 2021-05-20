@@ -84,7 +84,6 @@ describe('Basic user flow for SPA ', () => {
       const elem = document.querySelector('body');
       return elem.className;
     });
-    //console.log(body);
     expect(body).toBe('single-entry');
   });
 
@@ -109,7 +108,6 @@ describe('Basic user flow for SPA ', () => {
       const elem = document.querySelector('body');
       return elem.className;
     });
-    //console.log(body);
     expect(body).toBe('settings');
   });
 
